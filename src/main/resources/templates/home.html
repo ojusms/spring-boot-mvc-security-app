@@ -18,17 +18,21 @@ Welcome to the company home page!
 </p>
 
 <hr>
-<!-- display a link /leaders for Managers only -->
-<p>
-    <a th:href="@{/leaders}">Leadership meeting</a> (for Managers only)
-</p>
+<div sec:authorize="hasRole('MANAGER')">
+    <!-- display a link /leaders for Managers only -->
+    <p>
+        <a th:href="@{/leaders}">Leadership meeting</a> (for Managers only)
+    </p>
+    <hr>
+</div>
 
-<hr>
-<!-- display a link /systems for Admins only -->
-<p>
-    <a th:href="@{/systems}">Systems meeting</a> (for Admins only)
-</p>
-<hr>
+<div sec:authorize="hasRole('ADMIN')">
+    <!-- display a link /systems for Admins only -->
+    <p>
+        <a th:href="@{/systems}">Systems meeting</a> (for Admins only)
+    </p>
+    <hr>
+</div>
 
 <form action="#" th:action="@{/logout}" method="post">
     <input type="submit" value="Logout">
