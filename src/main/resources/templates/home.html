@@ -18,6 +18,11 @@ Welcome to the company home page!
 </p>
 
 <hr>
+<!-- display a link /leaders for Managers only -->
+<p>
+    <a th:href="@{/leaders}">Leadership retreat</a> (for Managers only)
+</p>
+<hr>
 
 <form action="#" th:action="@{/logout}" method="post">
     <input type="submit" value="Logout">
