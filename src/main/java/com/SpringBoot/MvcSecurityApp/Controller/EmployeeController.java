@@ -10,4 +10,9 @@ public class EmployeeController {
     public String show() {
         return "home.html";
     }
+
+    @GetMapping("/leaders")
+    public String showLeaders() {
+        return "leaders";
+    }
 }
