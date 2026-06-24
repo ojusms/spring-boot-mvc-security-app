@@ -39,7 +39,11 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http.authorizeHttpRequests(configurer ->
-                configurer.anyRequest().authenticated()
+                configurer
+                        .requestMatchers("/home").hasRole("EMPLOYEE")
+                        .requestMatchers("/leaders/**").hasRole("MANAGER")
+                        .requestMatchers("/system/**").hasRole("ADMIN")
+                        .anyRequest().authenticated()
                 )
                 .formLogin(form ->
                         form.loginPage("/showMyLoginPage")
