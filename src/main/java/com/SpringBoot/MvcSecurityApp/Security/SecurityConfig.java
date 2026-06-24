@@ -42,7 +42,7 @@ public class SecurityConfig {
                 configurer
                         .requestMatchers("/home").hasRole("EMPLOYEE")
                         .requestMatchers("/leaders/**").hasRole("MANAGER")
-                        .requestMatchers("/system/**").hasRole("ADMIN")
+                        .requestMatchers("/systems/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .formLogin(form ->
