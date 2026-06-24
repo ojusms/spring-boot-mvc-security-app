@@ -22,7 +22,7 @@ public class SecurityConfig {
 
         UserDetails mary = User.builder()
                 .username("mary")
-                .password("{noo}test123")
+                .password("{noop}test123")
                 .roles("EMPLOYEE","MANAGER")
                 .build();
 
